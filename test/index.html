@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="wasmPrimes.wasm">
+        <title>Wasm Performance Test</title>
+        <script type="text/javascript" src="prime.js"></script>
+        <script type="text/javascript" src="a.out.js"></script>
+        <script type="text/javascript" src="wasm-arrays.js"></script>
+    </head>
+    <body>
+        <h1>Wasm Performance Test</h1>
+        <p>Please enter how many primes to generate:</p>
+        <input type="number" id="quantity" name="quantity" min="1" value="50000" max="100000">
+        <div style="orientation:horizontal">
+            <button onclick="printPrimes(generateQuantityPrimes(false));">JavaScript</button>
+            <button onclick="printPrimes(generateQuantityPrimes(true));">WebAssembly</button>
+        </div>
+        <button onclick="compareAlgs();">Compare</button>
+        <h2 id="time">Time: N/A</h2>
+        <ul id="primes">
+        </ul>   
+    </body>
+</html>
